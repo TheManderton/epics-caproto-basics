@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from caproto.server import pvproperty, PVGroup, ioc_arg_parser, run
 
-class Counter(PVGroup):
+class CounterSender(PVGroup):
     x = pvproperty(value=0.0)
 
     @x.startup
@@ -15,11 +15,11 @@ class Counter(PVGroup):
             await instance.write(value=x)
             
             # make the counter sleep until the next timestep
-            await async_lib.library.sleep(self.x.value)
+            await async_lib.library.sleep(1)
 
 if __name__ == '__main__':
     ioc_options, run_options = ioc_arg_parser(
             default_prefix='counter:',
             desc='Run an IOC with an increasing value.')
-    ioc = Counter(**ioc_options)
+    ioc = CounterSender(**ioc_options)
     run(ioc.pvdb, **run_options)

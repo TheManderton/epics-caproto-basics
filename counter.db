@@ -1,0 +1,27 @@
+record(calcout, "counter:x"){
+	field(SCAN, "1 second")
+	field(INPA, "counter:x")
+	field(INPB, "counter:step")
+	field(INPC, "counter:reset")
+	field(INPD, "counter:pause")
+	field(CALC, "(D#0)?(A):(A+B)")
+}
+
+record(bo, "counter:pause"){	
+	field(ZNAM, "false")
+	field(ONAM, "true")
+}
+
+record(ao, "counter:step"){
+}
+
+record(bo, "counter:reset"){
+	field(ZNAM, "false")
+	field(ONAM, "true")
+}
+
+record(calcout, "counter:rate"){
+	field(SCAN, "Passive")
+	field(INPA, "counter:rate")
+	field(CALC, "A")
+}

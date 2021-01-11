@@ -1,0 +1,13 @@
+record(bo,"traffic:red"){
+	field(ZNAM,"off")
+	field(ONAM,"on")
+}
+record(bo,"traffic:yellow"){
+	field(ZNAM,"off")
+	field(ONAM,"on")
+}
+
+record(bo,"traffic:green"){
+	field(ZNAM,"off")
+	field(ONAM,"on")
+}
