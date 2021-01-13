@@ -11,6 +11,7 @@ async def main():
     
     while True:
         x = ctx.get_pvs(pv_name)[0].read().data
+        val = x[0]
         print(x[0])
         await asyncio.sleep(1)
 
