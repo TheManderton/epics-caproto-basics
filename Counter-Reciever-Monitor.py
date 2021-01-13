@@ -11,8 +11,7 @@ async def main():
         return Context()
 
     ctx = await new_context()
-    #x = await ctx.get_pvs('counter:x')
-    x = await ctx.get_pvs('13SIM1:Proc1:TIFF:Capture')
+    x = await ctx.get_pvs('counter:x')
     sub = x[0].subscribe()
     res = await x[0].read()
     

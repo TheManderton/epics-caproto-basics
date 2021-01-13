@@ -15,8 +15,6 @@ async def main():
     sub = x[0].subscribe()
     res = await x[0].read()
    
-    print(res.data[0])
-
     responses = []
     def f(sub, response):
         print('Recieved response from', sub.pv.name)
@@ -32,8 +30,6 @@ async def main():
         print('Recieved value', currentVal)
 
     sub.add_callback(g)
-    # --- Function calls go here --- #
-    await resetWhen(x,currentVal, 10)
 
     # The subscriber remains until the program is stopped
     while True:
