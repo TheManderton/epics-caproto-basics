@@ -11,7 +11,7 @@ async def main():
         return Context()
 
     ctx = await new_context()
-    x = await ctx.get_pvs('counter:x')
+    x = await ctx.get_pvs('13SIM1:cam1:SizeX')
     sub = x[0].subscribe()
     res = await x[0].read()
     
@@ -29,7 +29,7 @@ async def main():
 
     sub.add_callback(g)
 
-    # The subscriber remains until the program is stopped
+    #The subscriber remains until the program is stopped
     while True:
         await asyncio.sleep(30)
 
